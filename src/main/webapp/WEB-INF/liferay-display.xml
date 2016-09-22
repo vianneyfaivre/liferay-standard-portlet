@@ -2,6 +2,8 @@
 <!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.1.0//EN" "http://www.liferay.com/dtd/liferay-display_6_1_0.dtd">
 
 <display>
+	<!-- Portlets are grouped into categories. Those categories are displayed (in a "catalog") when adding a portlet in a page -->
+	<!-- You can hide a portlet from the catalog by setting the category to "category.hidden" -->
 	<category name="category.sample">
 		<portlet id="liferay-standard-portlet" />
 	</category>

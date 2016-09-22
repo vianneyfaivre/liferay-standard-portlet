@@ -2,6 +2,11 @@ package com.sample.bean;
 
 import java.io.Serializable;
 
+/**
+ * Bean used for displaying data in view-form.jsp
+ *
+ * @author Vianney FAIVRE
+ */
 public class SampleFormBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;

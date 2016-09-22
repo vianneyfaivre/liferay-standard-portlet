@@ -3,6 +3,11 @@ package com.sample.bean;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * Bean used for displaying data in view-random-data.jsp
+ *
+ * @author Vianney FAIVRE
+ */
 public class RandomDataBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;

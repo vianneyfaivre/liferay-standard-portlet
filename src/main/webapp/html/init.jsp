@@ -15,5 +15,8 @@
 
 <%@ page import="com.liferay.portal.kernel.util.Constants" %>
 
+<%-- Adds some useful Java objects into the JSP page context, @see com.liferay.taglib.theme.DefineObjectsTag --%>
 <liferay-theme:defineObjects />
+
+<%-- Adds some portlet standard Java objects into the JSP page context --%>
 <portlet:defineObjects />

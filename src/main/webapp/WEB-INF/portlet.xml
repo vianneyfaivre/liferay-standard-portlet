@@ -2,13 +2,20 @@
 
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
 	<portlet>
+		<!-- name of the portlet, has to be the same as in liferay-portlet.xml -->
 		<portlet-name>liferay-standard-portlet</portlet-name>
-		<display-name>Liferay + Thymeleaf portlet</display-name>
+		
+		<display-name>Liferay portlet + Spring Portlet MVC</display-name>
+		
 		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		
+		<!-- Path to Spring portlet MVC configuration -->
 		<init-param>
 			<name>contextConfigLocation</name>
 			<value>classpath:spring/spring-portlet-mvc-configuration.xml</value>
 		</init-param>
+		
+		<!-- Path to the JSP to use when going into configuration mode of the portlet -->
 		<init-param>
 			<name>config-template</name>
 			<value>/html/sample-portlet/portlet-configuration.jsp</value>

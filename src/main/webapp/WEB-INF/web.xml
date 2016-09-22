@@ -2,12 +2,13 @@
 
 <web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
+	<!-- Path to servlet configuration file that will be used for initializing the servlet -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:spring/spring-portlet-beans.xml</param-value>
     </context-param>
     
-    <!-- Spring webapp context listener -->
+    <!-- Spring webapp context listener (handles deploy / undeploy) -->
    	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>	

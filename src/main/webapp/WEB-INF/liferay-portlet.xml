@@ -2,10 +2,15 @@
 <!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.1.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_1_0.dtd">
 
 <liferay-portlet-app>
+	
 	<portlet>
+		<!-- name of the portlet, has to be the same as in portlet.xml -->
 		<portlet-name>liferay-standard-portlet</portlet-name>
+		
+		<!-- Java class that is used for handling the configuration mode of the portlet -->
 		<configuration-action-class>com.sample.controller.SamplePortletConfigurationController</configuration-action-class>
 	</portlet>
+	
 	<role-mapper>
 		<role-name>administrator</role-name>
 		<role-link>Administrator</role-link>

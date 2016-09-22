@@ -41,6 +41,9 @@ public class SpringPortletMvcController {
 
 	private static final Log LOGGER = LogFactoryUtil.getLog(SpringPortletMvcController.class);
 
+	/**
+	 * RENDER phase called by default, redirects to view-form.jsp
+	 */
 	@RenderMapping
 	public String defaultHandler(Model m, PortletRequest portletRequest, PortletResponse portletResponse) {
 		LOGGER.debug("default called");
@@ -50,6 +53,11 @@ public class SpringPortletMvcController {
 		return "sample-portlet/view-form";
 	}
 
+	/**
+	 * ACTION phase called when sending the form from view-form.jsp
+	 * 
+	 * Next RENDER phase is displaying view-random-data.jsp
+	 */
 	@ActionMapping(params = { "action=actionSample" })
 	public void doActionSample(Model m, PortletRequest portletRequest, ActionResponse actionResponse, @ModelAttribute SampleFormBean mySampleFormBean,
 			BindingResult result) {
@@ -60,6 +68,9 @@ public class SpringPortletMvcController {
 		actionResponse.setRenderParameter("render", "renderSample");
 	}
 
+	/**
+	 * RENDER phase that displays view-random-data.jsp
+	 */
 	@RenderMapping(params = { "render=renderSample" })
 	public String doRenderActionSample(Model m, PortletRequest portletRequest, PortletResponse portletResponse) {
 		LOGGER.debug("renderSample called");
@@ -69,6 +80,9 @@ public class SpringPortletMvcController {
 		return "sample-portlet/view-random-data";
 	}
 
+	/**
+	 * RESOURCE phase that can be called from view-form.jsp
+	 */
 	@ResourceMapping("ajaxTest")
 	public void doResource(ResourceRequest resourceRequest, ResourceResponse resourceResponse) {
 		LOGGER.debug("doResource called");
@@ -94,11 +108,17 @@ public class SpringPortletMvcController {
 		}
 	}
 
+	/**
+	 * Let Math.PI be available in all JSP as variable "PI"
+	 */
 	@ModelAttribute("PI")
 	public double getPI() {
 		return Math.PI;
 	}
 
+	/**
+	 * Let a portlet preference "myConfigField" be available in all JSP as variable "myConfigFieldPortletPreference"
+	 */
 	@ModelAttribute("myConfigFieldPortletPreference")
 	public String getPortletPreference(RenderRequest renderRequest) {
 		PortletPreferences portletPreferences = renderRequest.getPreferences();
