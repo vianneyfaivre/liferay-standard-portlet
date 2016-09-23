@@ -9,7 +9,6 @@ import javax.portlet.ActionResponse;
 import javax.portlet.PortletPreferences;
 import javax.portlet.PortletRequest;
 import javax.portlet.PortletResponse;
-import javax.portlet.RenderRequest;
 import javax.portlet.ResourceRequest;
 import javax.portlet.ResourceResponse;
 
@@ -120,8 +119,8 @@ public class SpringPortletMvcController {
 	 * Let a portlet preference "myConfigField" be available in all JSP as variable "myConfigFieldPortletPreference"
 	 */
 	@ModelAttribute("myConfigFieldPortletPreference")
-	public String getPortletPreference(RenderRequest renderRequest) {
-		PortletPreferences portletPreferences = renderRequest.getPreferences();
+	public String getPortletPreference(PortletRequest portletRequest) {
+		PortletPreferences portletPreferences = portletRequest.getPreferences();
 
 		return portletPreferences.getValue("myConfigField", "Not set");
 	}
