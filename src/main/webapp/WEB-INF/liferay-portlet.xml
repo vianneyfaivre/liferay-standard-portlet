@@ -9,6 +9,12 @@
 		
 		<!-- Java class that is used for handling the configuration mode of the portlet -->
 		<configuration-action-class>com.sample.controller.SamplePortletConfigurationController</configuration-action-class>
+		
+		<!-- Static resources : CSS & JS -->
+		<header-portlet-css>/css/sample-portlet-top.css</header-portlet-css>
+		<header-portlet-javascript>/js/sample-portlet-top.js</header-portlet-javascript>
+		<footer-portlet-css>/css/sample-portlet-bottom.css</footer-portlet-css>
+		<footer-portlet-javascript>/js/sample-portlet-bottom.js</footer-portlet-javascript>
 	</portlet>
 	
 	<role-mapper>

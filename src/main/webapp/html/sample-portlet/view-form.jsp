@@ -45,7 +45,7 @@ is put in the Spring Model and available as "mySampleFormBean"
 
 <br />
 
-<button onClick="ajaxGet()">Ajax Test</button>
+<button onClick="MyNamespace.SamplePortlet.testAjax('${ajaxEndpointURL}')">Ajax Test</button>
 
 <br />
 
@@ -56,20 +56,3 @@ PI: <c:out value="${PI}" />
 
 <%-- Displays the value set in the model thanks to the method SpringPortletMvcController#getPortletPreference --%>
 Portlet configuration : <c:out value="${myConfigFieldPortletPreference}" />
- 
-<%-- Vanilla JS that makes an ajax call to the RESOURCE phase of the portlet --%>
-<script type="text/javascript">
-/*<![CDATA[*/
-	function ajaxGet() {
-		var url = '${ajaxEndpointURL}';
-		var r = new XMLHttpRequest();
-		r.open("GET", url, true);
-		r.onreadystatechange = function() {
-			if(this.status == 200 && this.readyState == XMLHttpRequest.DONE) {
-				alert("AJAX Response = "+r.responseText);
-			}
-		};
-		r.send();
-	}
-/*]]>*/
-</script>
